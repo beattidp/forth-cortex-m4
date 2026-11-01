@@ -1,0 +1,30 @@
+
+[Forth for ARM Cortex-M4: planning]
+
+This project will be for implementation and testing a
+direct-threaded Forth kernel for the ARM Cortex-M4,
+which will run from ROM and allow further code (Forth words)
+to be compiled into RAM.
+
+It is proposed to develop a DTC (direct-threaded code) implementation,
+(as described here, https://www.bradrodriguez.com/papers/moving1.htm)
+using an existing 32-bit Forth and replacing all assembler code and directives
+as necessary in its source code and files. 
+
+For reference, Z382 Camel Forth is a 32-bit Forth based on the papers by Rodriguez.
+Find the source code in ./tmp/32bit/CAML382/asm for the following files 
+CAML382d.S: CPU and Model Dependencies
+  - this would define the architecture
+CAML382.S: Code Primitives
+CAML382h.S: High Level Words
+
+This will require ARM assembler.
+
+Target MCU for validating the port will be the STM32G474,
+which utilizes 32-bit Arm Cortex-M4 RISC core with floating point unit.
+
+PlatformIO can be utilized for this. Refer to folder ../x-nucleo-ihm07m1
+
+Research as necessary and place any retrieved documents (such as PDF) in ./doc/reference or ./doc/datasheets accordingly.
+
+We need to agree on a strategy and arrive at an implementation plan with clear phases and milestones. 
