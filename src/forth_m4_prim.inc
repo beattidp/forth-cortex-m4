@@ -1,5 +1,18 @@
-/* forth_m4_prim.inc -- Core Primitives for ARM Cortex-M4
- * Ported from CAML382.s (CamelForth 32-bit by Douglas Beattie Jr. / Brad Rodriguez)
+/*  Forth Kernel, 32-bit, for ARM Cortex M4
+ *  ..based on CamelForth for the Z80382  ("Z382")
+ *  portions (C) 2003 Douglas Beattie Jr.
+ * 
+ *  (C) 1994 Bradford J. Rodriguez
+ *  Permission is granted to freely copy, modify,
+ *  and distribute this program for personal or
+ *  educational use. Commercial inquiries should
+ *  be directed to the author at 115 First St.,
+ *  # 105, Collingwood, Ontario L9Y 4W3, Canada
+ */
+ 
+ /*
+   forth_m4_prim.inc -- Core Primitives for ARM Cortex-M4
+   Ported from CAML382.s (CamelForth 32-bit by Douglas Beattie Jr. / Brad Rodriguez)
  */
 
 /* Forth Cold Startup Routine (Called from C main) */
