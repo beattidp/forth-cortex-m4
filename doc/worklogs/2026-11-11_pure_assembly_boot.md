@@ -64,3 +64,12 @@ Ensure that all C wrappers (`main.c`, `console_io.c`, HAL drivers, CMSIS C start
   - Nucleo-G474RE verified on `/dev/ttyACM0` via automated tests.
   - Olimex-E407 verified on `/dev/ttyUSB1` via screen interactive session.
   - Both boards fully operational in pure assembly without any C libraries or runtime.
+
+---
+
+## 4. Integration & Release
+- Merged `feature/multi-board-e407` into `main` via merge commit `6df11aa`.
+- Post-merge build verified: `pio run` cleanly built both `nucleo_g474re` and `olimex_e407`.
+- User reviewed and approved the commit log.
+- Pushed `main` and milestone tag `v2.0-pure-asm-boot` upstream to `origin/main`.
+
