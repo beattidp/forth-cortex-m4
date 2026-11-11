@@ -1,0 +1,5 @@
+pypdf>=7.0.1
+pyserial>=3.5
+SCons>=4.11.1
+serialio>=2.4.0
+sockio>=0.15.0

@@ -11,3 +11,6 @@
 - **Worklogs (`doc/worklogs/`)**: Maintain detailed activity logs in `doc/worklogs/`. Each entry must include the date, time, agent, and user, summarizing all actions and changes.
 - **Feature & Fix Documentation (`doc/features/`)**: Document all implemented, refined, or fixed features in `doc/features/` with comprehensive details on architecture, API usage, and verification.
 
+## Python
+ - refer to  ~/.gemini/config/skills/python/SKILL.md
+
