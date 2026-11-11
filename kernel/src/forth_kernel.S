@@ -85,13 +85,13 @@
     .text
 
     /* Include Primitives */
-    .include "src/forth_m4_prim.inc"
+    .include "forth_m4_prim.inc"
 
     /* Include Architecture Dependencies */
-    .include "src/forth_m4_d.inc"
+    .include "forth_m4_d.inc"
 
     /* Include High-Level Words */
-    .include "src/forth_m4_high.inc"
+    .include "forth_m4_high.inc"
 
     /* Initial User Area Image (copied to 0x20001040 on cold boot) */
     .balign 4

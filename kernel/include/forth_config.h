@@ -5,7 +5,7 @@
 
 /* Memory Map Configuration for STM32G474RE (512 KB Flash, 128 KB SRAM)
  *
-/* SRAM1 Layout (128 KB):
+ * SRAM1 Layout (128 KB):
  *  0x20000000 - 0x20000FFF : C data, BSS, HAL drivers (4 KB)
  *  0x20001000 - 0x2000103F : RAM Trampoline Table (40 bytes)
  *  0x20001040 - 0x200010FF : User Area (192 bytes, UP points to 0x20001040)
