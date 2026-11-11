@@ -64,3 +64,22 @@
   - `pio run -e olimex_e407`: **SUCCESS** (RAM: 116 bytes, Flash: 12992 bytes)
 - **Full Workspace Build**:
   - `pio run` (root): **SUCCESS** (both environments compiled and linked with 0 errors, 0 warnings).
+
+---
+
+## 3. Physical Hardware Flashing & Interactive Validation (STM32-E407)
+
+1. **J-Link JTAG Flashing**:
+   - Flashed via `pio run -d boards/olimex_e407 -t upload` using Segger J-Link Commander V9.20.
+   - Identified JTAG chain: CoreSight JTAG-DP (`0x4BA00477`) and STM32 Boundary Scan (`0x06413041`).
+   - Flashed 16,384 bytes in 0.517 s with automatic reset and core release (`loadbin`, `r`, `g`).
+
+2. **Automated Serial Hardware Verification (`tests/test_olimex_e407.py`)**:
+   - Connected over `/dev/ttyUSB1` @ 115200 baud (USART3 on PD8/PD9).
+   - Test 1 (Arithmetic & Stack): `10 25 + . CR` -> `35 ok` (PASS).
+   - Test 2 (Stack Rotation): `1 2 3 ROT . . . CR` -> `1 3 2 ok` (PASS).
+   - Test 3 (RAM Word Compilation): `: SQUARE DUP * ; 7 SQUARE . CR` -> `49 ok` (PASS).
+   - Test 4 (RAM Variables & Constants): `MYVAR @ .` -> `9999 ok`, `MYCONST .` -> `1234 ok` (PASS).
+   - Test 5 (Looping / Control Flow): `: SUM10 0 11 1 DO I + LOOP ; SUM10 . CR` -> `55 ok` (PASS).
+   - Test 6 (Sieve of Eratosthenes Benchmark): `DO-PRIME` computed 1899 primes up to 16,384 in 0.851 s (PASS).
+
