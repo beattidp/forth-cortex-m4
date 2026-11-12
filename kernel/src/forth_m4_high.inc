@@ -786,13 +786,19 @@
     head COLD, "COLD", docolon
         .long CR_WORD
         .long XSQUOTE
-        .byte 48
-        .ascii "CamelForth Cortex-M4 v1.0 (STM32G474 DTC 32-bit)"
+        .byte (banner_str_end - banner_str_start)
+banner_str_start:
+        .ascii "CamelForth Cortex-M4 v1.0 ("
+        .ascii TARGET_MCU_NAME
+        .ascii " DTC 32-bit)"
+banner_str_end:
         .balign 4
         .long TYPE, CR_WORD
         .long XSQUOTE
-        .byte 24
+        .byte (help_str_end - help_str_start)
+help_str_start:
         .ascii "Type WORDS to list words"
+help_str_end:
         .balign 4
         .long TYPE, CR_WORD
         .long ABORT_WORD, EXIT
