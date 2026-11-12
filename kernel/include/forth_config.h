@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-/* Memory Map Configuration for STM32G474RE (512 KB Flash, 128 KB SRAM)
+/* Memory Map Configuration for ARM Cortex-M4 CamelForth DTC (128 KB SRAM)
  *
  * SRAM1 Layout (128 KB):
  *  0x20000000 - 0x20000FFF : C data, BSS, HAL drivers (4 KB)

@@ -59,7 +59,15 @@ def run_tests() -> bool:
             print("FAILED to get 'ok' prompt!")
             return False
 
-        # 2. Arithmetic & Stack
+        # 2. COLD Banner Verification (Unique MCU Identification)
+        print("\n[Test Banner] Target MCU identification in COLD:")
+        resp = tester.send_line("COLD", wait_sec=0.3)
+        print(f"  Input: 'COLD' -> Response: {repr(resp.strip())}")
+        assert "STM32F407" in resp, "Expected 'STM32F407' in COLD banner!"
+        assert "STM32G474" not in resp, "Found unexpected 'STM32G474' in F407 banner!"
+        print("  PASS (Identified as STM32F407)")
+
+        # 3. Arithmetic & Stack
         print("\n[Test 1] Arithmetic & Stack operations:")
         resp = tester.send_line("10 25 + . CR")
         print(f"  Input: '10 25 + . CR' -> Response: {repr(resp.strip())}")

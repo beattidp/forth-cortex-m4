@@ -70,6 +70,7 @@ Both boards follow a unified hardware initialization sequence implemented in ass
 | **Console UART** | USART3 @ PD8 (TX) / PD9 (RX) AF7 | LPUART1 @ PA2 (TX) / PA3 (RX) AF12 |
 | **Baud Rate Generator** | `USART3->BRR = 0x016C` (115200 @ 42 MHz) | `LPUART1->BRR = 0x0005C3B2` (115200 @ 170 MHz) |
 | **Error Clearing** | Read `USART_SR` followed by `USART_DR` | Write `0x0F` to `USART_ICR` |
+| **COLD Startup Banner** | `CamelForth Cortex-M4 v1.0 (STM32F407 DTC 32-bit)` | `CamelForth Cortex-M4 v1.0 (STM32G474 DTC 32-bit)` |
 
 ---
 

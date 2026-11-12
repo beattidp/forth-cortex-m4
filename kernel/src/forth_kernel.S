@@ -90,8 +90,19 @@
     /* Include Architecture Dependencies */
     .include "forth_m4_d.inc"
 
+    /* Target MCU Identification for COLD Banner */
+#ifndef TARGET_MCU_NAME
+#if defined(STM32F407xx)
+#define TARGET_MCU_NAME "STM32F407"
+#elif defined(STM32G474xx)
+#define TARGET_MCU_NAME "STM32G474"
+#else
+#define TARGET_MCU_NAME "Cortex-M4"
+#endif
+#endif
+
     /* Include High-Level Words */
-    .include "forth_m4_high.inc"
+#include "forth_m4_high.inc"
 
     /* Initial User Area Image (copied to 0x20001040 on cold boot) */
     .balign 4
